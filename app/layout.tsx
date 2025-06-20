@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@navikt/ds-css";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "musixt",
@@ -14,7 +14,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <main className="flex flex-col items-center">
+          <div className="max-w-2xl">
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );

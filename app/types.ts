@@ -17,6 +17,8 @@ export interface IAlbum {
     date: string,
     genres: IGenre[],
     url: string
+    score: number,
+    voters: number
 }
 
 

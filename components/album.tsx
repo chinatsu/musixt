@@ -10,7 +10,7 @@ export default async function AlbumCard({ album }: { album: IAlbum }) {
             <p>Score {album.score*2}/10</p>
             <div className="flex flex-wrap gap-1">
                 {
-                    album.genres.map(g =><GenreCard key={album.id + g.id} name={g.name} title={g.name}></GenreCard>)
+                    album.genres.map(g =><GenreCard key={album.id + g.id} id={g.id} title={g.name}></GenreCard>)
                 }
             </div>
             <a href={`https://${album.url}`}>Listen on Bandcamp</a>

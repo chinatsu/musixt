@@ -27,3 +27,9 @@ export interface ISimilarGenre {
   name: string,
   count: number
 }
+
+export interface IGenreInfo {
+    genre: IGenre,
+    similar_genres: ISimilarGenre[],
+    albums: IAlbum[]
+}

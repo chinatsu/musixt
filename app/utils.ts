@@ -12,13 +12,17 @@ const cyrb128 = (seed: string): [number, number, number, number] => {
     h2 = Math.imul(h4 ^ (h2 >>> 22), 2869860233);
     h3 = Math.imul(h1 ^ (h3 >>> 17), 951274213);
     h4 = Math.imul(h2 ^ (h4 >>> 19), 2716044179);
-    h1 ^= (h2 ^ h3 ^ h4), h2 ^= h1, h3 ^= h1, h4 ^= h1;
+    h1 ^= (h2 ^ h3 ^ h4);
+    h2 ^= h1;
+    h3 ^= h1;
+    h4 ^= h1;
     return [h1 >>> 0, h2 >>> 0, h3 >>> 0, h4 >>> 0];
 }
 
 const xoshiro128ss = (seed: string) => {
     let [a, b, c, d] = cyrb128(seed)
-    let t = b << 9, r = b * 5;
+    const t = b << 9;
+    let r = b * 5;
     r = (r << 7 | r >>> 25) * 9;
     c ^= a;
     d ^= b;
